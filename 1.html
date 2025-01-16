@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        Создать HTML-страницу, которая выводит коэффициент Ваших физических способностей F(l) на ближайший выходной, используя формулу 
+
+        I=l^3/sin(l),
+        где l - количество дней, прошедших от Вашего рождения. 
+    </div>
+    <div>Введите сколько дней прошло с вашего рождения:</div>
+    <p></p>
+    <input type="text" name="" id="1">
+    <input type="button" value="Ввести" id="2">
+    <script>
+        document.getElementById("2").onclick=function(){
+            l = document.getElementById("1").value
+            I=(l**3)/(Math.sin(l));
+            alert(`Ваш коэффициент физических способностей  на ближайший выходной: ${I}`);
+        }
+    </script>
+</body>
+</html>

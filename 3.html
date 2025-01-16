@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Сделайте страницу, на которой сначала не видно ни одной картинки, она выглядит пустой. Однако стоит набрать на клавиатуре слово "show", как картинки немедленно появляются. Если потом набрать "hide", они исчезают. 
+    </div>
+    <h1>Введите "show" для показа картинок или "hide" для их скрытия</h1>
+    
+    <div id="images" class="hidden">
+        <img src="/img/1.png" alt="Картинка 1">
+        <img src="/img/2.png" alt="Картинка 2">
+        <img src="/img/3.png" alt="Картинка 3">
+    </div>
+
+    <script>
+        let skritiitext = '';
+
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+
+            skritiitext += key;
+
+            if (skritiitext.endsWith('show')) {
+                document.getElementById('images').classList.remove('hidden');
+                skritiitext = ''; 
+            }
+
+            if (skritiitext.endsWith('hide')) {
+                document.getElementById('images').classList.add('hidden');
+                skritiitext = ''; 
+            }
+        });
+    </script>
+</body>
+</html>
